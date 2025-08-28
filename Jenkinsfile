@@ -5,9 +5,10 @@ pipeline {
     IMAGE_NAME = "sample-app"
   }
   stages {
-    stage('Clone Code') {
+    stage('Checkout') {
       steps {
-        git 'https://github.com/shan376/sample-app.git'
+        // Correct branch specify karo
+        git branch: 'main', url: 'https://github.com/shan376/sample-app.git'
       }
     }
     stage('Build Docker Image') {
